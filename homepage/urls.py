@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url('^$', views.index, name='homepage'),
+    url(r'^new/image$', views.new_image, name='new-image')
 ]
 
 if settings.DEBUG:
