@@ -5,4 +5,5 @@ from django.shortcuts import render, redirect
 def edit_profile_page(request):
     return render(request, 'profile/edit_user_profile_page.html')
 
-# def profile_page(request):
+def profile_page(request):
+    return render(request, 'profile/profile_page.html')
