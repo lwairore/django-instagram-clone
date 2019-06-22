@@ -6,7 +6,8 @@ class Image(models.Model):
     image_name = models.CharField(max_length=30)
     image_caption = models.CharField(max_length=30)
     image = models.ImageField(upload_to='images/', default='/home/karangu/Desktop/Instagram\ clone/media')
-    uploaded_by = models.ForeignKey(User, default=0)
+    uploaded_by = models.ForeignKey(User, default=1)
+    # profile_pic = models.For
 
     
     def save_image(self):
@@ -14,5 +15,10 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+
+class Follow(models.Model):
+    user_id = models.ForeignKey(User)
+    following_id = models.ForeignKey(User)
+    
 
     
