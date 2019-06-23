@@ -17,8 +17,14 @@ class Image(models.Model):
         self.delete()
 
 class Follow(models.Model):
-    user_id = models.ForeignKey(User)
-    following_id = models.ForeignKey(User)
-    
+    user_id = models.IntegerField()
+    # following_id = models.ForeignKey(User, default=0)
+    following_id = models.IntegerField()
+
+   
+from django.db import models
+
+class Fruit(models.Model):
+    name = models.CharField(max_length=100, primary_key=True)
 
     
