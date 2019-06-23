@@ -8,6 +8,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/', default='/home/karangu/Desktop/Instagram\ clone/media')
     uploaded_by = models.ForeignKey(User, default=1)
     # profile_pic = models.For
+    comments = models.CharField(max_length =1000)
 
     
     def save_image(self):
@@ -19,12 +20,12 @@ class Image(models.Model):
 class Follow(models.Model):
     user_id = models.IntegerField()
     # following_id = models.ForeignKey(User, default=0)
-    following_id = models.IntegerField()
+    following_id = models.IntegerField(default=0)
 
    
-from django.db import models
+# from django.db import models
 
-class Fruit(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)
+# class Fruit(models.Model):
+#     name = models.CharField(max_length=100, primary_key=True)
 
     
