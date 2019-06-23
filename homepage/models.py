@@ -8,7 +8,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/', default='/home/karangu/Desktop/Instagram\ clone/media')
     uploaded_by = models.ForeignKey(User, default=1)
     # profile_pic = models.For
-    comments = models.CharField(max_length =1000)
+    comments = models.CharField(max_length =1000, default="Not comments yet")
 
     
     def save_image(self):
@@ -28,4 +28,6 @@ class Follow(models.Model):
 # class Fruit(models.Model):
 #     name = models.CharField(max_length=100, primary_key=True)
 
+class Comments(models.Model):
+    comment = models.TextField()
     
