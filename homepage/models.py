@@ -9,7 +9,9 @@ class Image(models.Model):
     uploaded_by = models.ForeignKey(User, default=1)
     # profile_pic = models.For
     comments = models.CharField(max_length =1000, default="Not comments yet")
-
+    likes = models.IntegerField(default=0)
+    liked = models.BooleanField()
+    
     
     def save_image(self):
         self.save()
