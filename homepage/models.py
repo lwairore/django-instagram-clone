@@ -30,4 +30,4 @@ class Follow(models.Model):
 
 class Comments(models.Model):
     comment = models.TextField()
-    
+    image_id = models.IntegerField(default=0)
