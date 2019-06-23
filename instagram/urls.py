@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'', include('homepage.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}), 
-    url(r'^profile/$', include('user_profile.urls'))
+    url(r'^profile/', include('user_profile.urls')),
+    url(r'^timeline/', include('timeline.urls')),
 
 ]
