@@ -1,7 +1,8 @@
-virtual/
+
 INSTAGRAM SAMPLES/
-media/images
-__pycache__/
+virtual/
+*.pyc
 .env
 .vscode/*
-*.pyc
+__pycache__/
+db.sqlite3
