@@ -2,3 +2,6 @@ virtual/
 INSTAGRAM SAMPLES/
 media/images
 __pycache__/
+.env
+.vscode/*
+*.pyc
