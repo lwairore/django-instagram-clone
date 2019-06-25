@@ -10,7 +10,8 @@ class Image(models.Model):
     # profile_pic = models.For
     comments = models.CharField(max_length =1000, default="Not comments yet")
     likes = models.IntegerField(default=0)
-    liked = models.BooleanField()
+    liked = models.BooleanField(default=False)
+    
     
     
     def save_image(self):
@@ -33,3 +34,13 @@ class Follow(models.Model):
 class Comments(models.Model):
     comment = models.TextField()
     image_id = models.IntegerField(default=0)
+
+class Profile(models.Model):
+    profile_pic = models.ImageField(upload_to='profile_pictures/', default='/home/karangu/Desktop/Instagram\ clone/media', )
+    
+    user_id = models.IntegerField(default=0)
+    first_name = models.CharField(max_length=30, blank=True)
+    last_name = models.CharField(max_length=30, blank=True)
+    email = models.CharField(max_length=300, blank=True)
+    phone = models.CharField(max_length=30, blank=True)
+    bio = models.CharField(max_length=300, blank=True)
