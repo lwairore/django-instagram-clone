@@ -7,7 +7,6 @@ urlpatterns = [
     url('^$', views.timeline_page, name='timeline'),
     url('^comment/(\d+)/$', views.comment, name="comment"),
     url(r'^like/(\d+)/$', views.like, name='like'),
-
 ]
 
 if settings.DEBUG:

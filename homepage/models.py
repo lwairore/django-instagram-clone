@@ -22,14 +22,8 @@ class Image(models.Model):
 
 class Follow(models.Model):
     user_id = models.IntegerField()
-    # following_id = models.ForeignKey(User, default=0)
     following_id = models.IntegerField(default=0)
 
-   
-# from django.db import models
-
-# class Fruit(models.Model):
-#     name = models.CharField(max_length=100, primary_key=True)
 
 class Comments(models.Model):
     comment = models.TextField()

@@ -40,10 +40,6 @@ def new_image(request):
             image = form.save(commit=False)
             image.uploaded_by = current_user
             image.save()
-            
-
-
-
             print('-' * 30)
             print(image.uploaded_by)
             image.save_image()
@@ -98,31 +94,11 @@ def activate(request, uidb64, token):
 def follow(request, following_id):
     current_user = request.user
     trial = User.objects.get(username=current_user).pk
-    # print('->'*5,trial)
-    # print('+' * 30)
-    # print(current_user)
     if request.method == 'POST':
         trial_id = current_user.id
-        # print(type(trial_id))
-        # new_follower = Follow(user_id=0, following_id=0)
-        # Follow.objects.create(user_id=0, following_id=0)
-        # user = User.objects.get(id=trial_id)
-        # print('+' * 30)
-        # print(user.id)
-        # new_follower = Follow(user_id=trial)
-        # new_follower = Follow.objects.create(user_id=trial)
-        # print('='*10,new_follower.user_id)
-        # print(new_follower)
-        # new_follower.save()
-        # new_follower.save()
-        # new_follower.save()
         new_follower = Follow.objects.create(user_id=trial, following_id=following_id)
     # return redirect(index)
     return redirect(index)
-    # return render(request, 'signup.html')
-
-
-        # being_followed_id = 
 
 
 def search_results(request):
@@ -136,8 +112,6 @@ def search_results(request):
             if search_term == i.username.lower():
                 print('-'* 20)
                 print("hello")
-                # searched_users = User.objects.filter(username=)
-                # post_images = Im
         return redirect(index)
 
 
