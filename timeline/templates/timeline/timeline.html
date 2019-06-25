@@ -1,0 +1,731 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+            
+            
+    </title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+body,
+html {
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+body {
+  background: #e2e2e2;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #e2e2e2 1%, #f2f2f2 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e2e2e2 1%, #f2f2f2 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e2e2e2 1%, #f2f2f2 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#f2f2f2', GradientType=0);
+  /* IE6-9 */
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: proxima-nova-condensed, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #262626;
+}
+/* section {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    padding-top: 9em;
+} */
+.navbar {
+    z-index: 16;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    height: 77px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    border-bottom: 1px solid transparent;
+}
+.navfar {
+    background-color: white;
+    border-bottom: 1px solid #e6e6e6;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.navbar a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.navbar a i {
+    font-size: 45px;
+    height: 43px;
+    width: 43px;
+    line-height: 42px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 6px;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.bisc {
+    color: white;
+    margin-right: 0px;
+    background: -webkit-gradient(linear, right top, left bottom, from(#4c68d7), color-stop(#8a3ab9), color-stop(#cd486b), color-stop(#fb8750), to(#FF9800));
+    background: -webkit-linear-gradient(right top, #4c68d7, #8a3ab9, #cd486b, #fb8750, #FF9800);
+    background: -o-linear-gradient(right top, #4c68d7, #8a3ab9, #cd486b, #fb8750, #FF9800);
+    background: linear-gradient(to left bottom, #4c68d7, #8a3ab9, #cd486b, #fb8750, #FF9800);
+    -webkit-transform: rotate(360deg) scale(1.1);
+    -ms-transform: rotate(360deg) scale(1.1);
+    transform: rotate(360deg) scale(1.1);
+}
+.mini {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+.navbar span {
+    background-image: url(https://goo.gl/NLUdLH);
+    background-position: 0px 0px;
+    height: 51px;
+    width: 177px;
+    display: inline-block;
+    -webkit-transition: .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.lil-bar {
+    background: #fff;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border: solid 1px #c8d7e1;
+    border-radius: 3px;
+    height: 35px;
+    line-height: 1;
+    z-index: 50000;
+    -webkit-transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.bar-cont {} .bar-cont a {
+    display: inline-block;
+    padding: 8px;
+    color: #636363;
+    font-size: 20px;
+}
+.insta {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+.a1 {
+    -webkit-transform: translate3d(-200px, 0px, 0px);
+    transform: translate3d(-200px, 0px, 0px);
+    -webkit-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+.animation {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+}
+.top-insta {
+    position: relative;
+    padding: 16px;
+    height: 60px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.top-insta img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+.top-insta .user {
+    margin-left: 10px;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 13px;
+    font-weight: 600
+}
+.dot {
+    cursor: pointer;
+    background-image: url(https://goo.gl/NLUdLH);
+    background-repeat: no-repeat;
+    background-position: -434px -345px;
+    height: 16px;
+    width: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+    right: 16px;
+    position: absolute;
+    text-align: right;
+}
+.post {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.23);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.overlay:after {
+    content: '';
+    width: 600px;
+    height: 100%;
+    background: black;
+    background: rgba(255, 255, 255, .1);
+    display: inline-block;
+    position: absolute;
+    left: 388px;
+    top: 0;
+    -moz-transform: skew(-45deg);
+    -webkit-transform: skew(-45deg);
+    -webkit-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.overlay span {
+    background-image: url(https://goo.gl/NLUdLH);
+    background-repeat: no-repeat;
+    background-position: -2px -53px;
+    height: 79px;
+    width: 88px;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.post:hover .overlay:after {
+    left: -600px;
+}
+.post:hover .overlay {
+    opacity: 1
+}
+.post:hover .overlay span {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+}
+.post img {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+.footer {
+    padding: 0 16px;
+}
+.react {
+    margin-top: 4px;
+    position: relative;
+}
+.react a {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.react a:last-child {
+    margin-right: 0
+}
+.react .love {
+    background-image: url(https://goo.gl/NLUdLH);
+    background-position: -408px -156px;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.react .comment {
+    background-image: url(https://goo.gl/NLUdLH);
+    background-position: -408px -26px;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.react .save {
+     background-image: url(https://goo.gl/NLUdLH);
+    background-repeat: no-repeat;
+    background-position: -104px -389px;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.caption {
+    color: #585858;
+    font-size: 13px;
+    margin: 16px 0;
+}
+.caption a {
+    margin-right: .3em;
+    font-weight: 600;
+}
+.comment-section {
+    position: relative;
+    border-top: 1px solid #efefef;
+    padding: 26px 26px 26px 0;
+    margin-top: 4px;
+    overflow: hidden
+}
+#cmnt {
+    outline: none;
+    overflow-x: scroll;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #262626;
+    width: 100%;
+    height: 18px;
+    max-height: 80px;
+    resize: none;
+}
+.dot02 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+    background-image: url(https://goo.gl/NLUdLH);
+    background-repeat: no-repeat;
+    background-position: -434px -345px;
+    height: 16px;
+    width: 16px;
+}
+.footer-cont {
+    font-size: 12px;
+    font-weight: 600;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 845px) {
+    .footer-cont {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .footer-cont ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    }
+    .footer-cont ul li {
+        margin-bottom: 8px;
+    }
+}
+.footer-cont ul {
+    padding: 0;
+    margin: 0;
+}
+.footer-cont ul li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 16px;
+}
+.footer-cont ul li:last-child {
+    margin-right: 0;
+}
+.footer-cont ul li a {
+    color: #003569;
+}
+.footer-cont span {
+    color: #999;
+}
+.list{
+    position: fixed;
+    background: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    bottom: 5em;
+    right: 15px;
+    border: solid 1px #e4e3e3;
+    border-radius: 3px;
+    line-height: 1;
+    z-index: 50000;
+    -webkit-transition: all 0.3s cubic-bezier(0.18, 0.89, 0.22, 1.28);
+    -o-transition: all 0.3s cubic-bezier(0.18, 0.89, 0.22, 1.28);    
+   transition: all 0.3s cubic-bezier(0.18, 0.89, 0.22, 1.28);
+    opacity: 0;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 56px rgba(0, 0, 0, 0.075);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 56px rgba(0, 0, 0, 0.075);
+    text-align: center;
+    transform: rotate(-45deg) scale(.5) translate3d(-133px, -80px, 0px)
+}
+.list:hover{
+     background: #fff;
+}
+.list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative
+}
+.list ul:before {
+    bottom: -15px;
+    border: 11px solid #e4e3e3;
+    content: " ";
+    position: absolute;
+    right: 3%;
+    margin-left: -10px;
+    border-top-style: solid;
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+} 
+.list ul:after {
+    bottom: -13.4px;
+    border: 10px solid white;
+    content: " ";
+    position: absolute;
+    right: 3.5%;
+    border-top-style: solid;
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.list ul li:first-child {
+
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+        
+}
+.list ul li:first-child a{
+    padding: 11px 10px;
+}
+.list ul li a {
+    padding: 10px 68px 10px 13px;
+    font-size: 14px;
+    margin: 3px 0;
+    display: block;
+    text-align: left;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.list ul li a:hover{
+    background:  #8a3ab9;
+    color: white;
+}
+.list li a img
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: -1px 5px 0 0;
+    display: inline;
+}
+.list li:last-child{
+    border-top: 1px solid #f0f0f0;
+    margin-top: 10px;
+}
+.list-order{
+        -webkit-transition: .2s cubic-bezier(0.45, 0.5, 0, 1.51);
+        -o-transition: .2s cubic-bezier(0.45, 0.5, 0, 1.51);
+        transition: .2s cubic-bezier(0.45, 0.5, 0, 1.51);
+}
+.ba{
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+}
+.animate{
+-webkit-transform: rotate(0deg) scale(1) translate3d(0px, 0px, 0px);
+        transform: rotate(0deg) scale(1) translate3d(0px, 0px, 0px);
+opacity: 1;
+}
+</style>
+</head>
+<body style="background-color:#ffe5e5">
+    
+
+
+    <div class="navbar">
+        <a href='{% url "homepage" %}'><i class="fa fa-instagram"></i><span></span></a></div>
+     <div class='lil-bar'>
+         <div class='bar-cont'>
+             <a href='#' role="button"><i class="fa fa-user-plus"></i></a>
+             <a href='{% url "homepage" %}' onclick='return false;' class='list-order' role="button"><i class="fa fa-ellipsis-h"></i></a>
+     </div>
+     </div>
+  <div class="list">
+     <ul>
+         <li><a href="https://goo.gl/TChSJ4" target='_blank'><img src="data:image/jpeg;base64,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" class="avatar avatar-50">uncle_oreo</a></li>
+         <li><a href='#'>Log in</a></li>
+         <li><a href='#'>Sign up</a></li>
+         <li><a href='#'>Report this user</a></li>
+         <li class='collapse'><a href='#'>Collapse the bar</a></li>
+         </ul>
+     </div>
+     
+ <section>
+     <div class="container" style="margin: 0 auto;
+     width: 100%;
+     max-width: 900px;
+     padding-top: 9em;">
+     <div class="row">
+         <div class="col-sm-3">
+                
+                    </hr><br>
+    
+    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+                        <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+                    </div>
+    
+    
+                    <ul class="list-group">
+                        <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125
+                        </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78
+                        </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Following</strong></span> {{following_no}}
+                        </li>
+                    </ul>
+    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Social Media</div>
+                        <div class="panel-body">
+                            <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i
+                                class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i
+                                class="fa fa-google-plus fa-2x"></i>
+                        </div>
+                    </div>
+             
+         </div>
+         <div class="col-sm-9">
+
+                {% for i in following  %}
+                {% for j in i %}
+                
+                <div class= 'insta fade-scroll'>
+                    <div class='top-insta'>
+                      <a href='https://goo.gl/Y9YWLo' target='_blank'><img src='data:image/jpeg;base64,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'></a>
+                      <a href='https://goo.gl/Y9YWLo' target='_blank' class='user'>uncle_oreo
+                </a>
+                      <span class= 'dot'></span>
+                    </div>
+                    <div class='post'>
+                        <div class="overlay">
+                        <span></span>
+                        </div>
+                      <img src='{{j.image.url}}' >
+                 </div>
+                    <div class='footer'>
+                      
+                      <div class='react'>
+                          <p></p>
+                          
+                            <form method="POST"  action="{% url 'like' j.id %}">
+                                    {% csrf_token %}
+                                    
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 86%">
+                                            Likes <span class="badge badge-light">{{j.likes}}</span>
+                                          </button>
+                                  </form>
+                        
+                      </div>
+                      
+                      <div class='caption'>
+                        <a href='#'>{{j.caption}}</a><span>{% for comment in all_comments %}{% if comment.image_id == j.id %}<p>{{comment.comment}}</p> {% endif %}{% endfor %}</span>
+                      </div>
+                      <form method="POST" action="{% url 'comment' j.id %}">
+                      <div class='comment-section'>
+                            {% csrf_token %}
+                            <input type="text" id='cmnt' placeholder="Add a comment" name="comments_user">
+                        <!-- <input type='text' id='cmnt' placeholder='Add a comment...' name="comments_user">  -->
+                        <br>
+                        <button class="btn btn-primary btn-sm" type="submit">Post</button>
+                        <!-- <span class='dot02'>
+                            
+                        </span> -->
+                      </div>
+                        </form>
+                    </div> <!-- end Footer -->
+                    
+                  </div> <!-- end Insta -->
+            
+                
+            {% endfor %}
+            {% endfor %}
+         </div>
+     </div>
+    </div>
+     
+        
+    
+    
+    
+
+        
+ </section> <!-- end section -->
+ 
+     <footer>
+     <div class="footer-cont">
+         <ul>
+          <li><a href='#'>About us</a></li>
+          <li><a href='#'>Support</a></li>
+          <li><a href='#'>Blog</a></li>
+          <li><a href='#'>Press</a></li>
+          <li><a href='#'>Jobs</a></li>
+          <li><a href='#'>Privacy</a></li>
+          <li><a href='#'>Terms</a></li>
+          <li><a href='#'>Directory</a></li>
+          <li><a href='#' onclick='return false;'>Language</a></li>
+         </ul>
+         <span class='copyright'>© 2017 INSTAGRAM</span>
+         </div>
+     </footer>
+
+
+     <script>
+     //ignore the first 13lines,the trick here is all about tracking the element till it comes into the view, by measuring height and stuff of both window screen and the element itself, its that simple, muhammad khairy
+$(function () {
+$('.insta').clone().appendTo('.a1');
+    $('.a1:first').find('.post img').attr('src','https://goo.gl/pnYKzy')
+    $('.a1:first').find('.caption span').text('Khitma partner');
+    $('.a1:eq(1)').find('.post img').attr('src','https://goo.gl/ebVC6W')
+    $('.a1:eq(1)').find('.caption span').text('Sip your coffee quite silently Get lost into some appealing books pages');
+    $('.a1:eq(2)').find('.post img').attr('src','https://goo.gl/CtfVAj')
+    $('.a1:eq(2)').find('.caption span').text('Cupcakes can perform rites of pilgrimage too ');
+    $('.a1:eq(3)').find('.post img').attr('src','https://goo.gl/Ch5atv')
+    $('.a1:eq(3)').find('.caption span').text('Rest in Peace Ya Narges');
+    $('.a1:eq(4)').find('.post img').attr('src','https://goo.gl/ZpfGSf');
+    $('.a1:eq(4)').find('.caption span').text('I promised I will never compose poems on your eyes .. but I did');
+$(window).on('scroll resize', function holy_nob() {
+    var    wh = $(window).height();
+    var    wt = $(window).scrollTop();
+    var    wb = (wt + wh);
+    var    rbj = $('.lil-bar');
+    var    ft = $('.footer-cont');
+    var    ft_t = ft.offset().top;
+    var    ft_h = ft.height();
+    var    tof  = (ft_t + ft_h);
+    var    fol  = (ft_h + 15);
+   if(wb >= tof){
+            rbj.css('bottom',fol);
+        }else{
+           rbj.css('bottom','15px');}
+    $('.fade-scroll').each(function(){
+        var   element = $(this);
+        var    el_h = element.height();
+        var    el_t = element.offset().top;
+        var    el_b = (el_t + el_h);
+        if((el_b > wt) && (el_t < wb)){
+            element.addClass('animation');
+        }
+        else {
+      element.removeClass('animation');
+    }
+          if (wt > el_t) {
+      element.css('opacity', 1-(wt - el_t)/850);
+    }
+         if(wt > 10) {$('.navbar').addClass('navfar').find('span').addClass('mini')
+                      $('.fa-instagram').addClass('bisc');
+                             }
+       
+    else{
+        $('.navbar').removeClass('navfar');
+        $('.navbar span').removeClass('mini');
+        $('.fa-instagram').removeClass('bisc');
+    }
+    });
+}); 
+     $('.list-order, .collapse').on('click',function() {
+       $('.list').toggleClass('animate');
+        $('.list-order').toggleClass('ba');
+    });
+  $("a[href='#']").click(function(e){
+    e.preventDefault();
+  });
+}); //end
+   
+     </script>
+</body>
+</html>

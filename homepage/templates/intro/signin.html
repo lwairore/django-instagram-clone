@@ -1,0 +1,186 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/saranshbarua/pen/KqoOom" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Clicker+Script|Cookie|Lato|Rochester" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<style>
+body
+{
+  margin:0px;
+}
+.mainflex
+{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+/*   background-color:#151515; */
+  min-height:100vh;
+}
+.inputbox
+{
+  height:35px;
+  width:300px;
+  font-family:'Roboto',sans-serif;
+  font-size:17px;
+  border: 1px solid #DDDDDD;
+  outline: none;
+  margin:10px;
+  padding-left:5px;
+}
+.inputbox:focus
+{
+  height:35px;
+  width:300px;
+  font-family:'Roboto',sans-serif;
+  
+  box-shadow: 0 0 6px rgba(81, 203, 238, 1);
+}
+.butt
+{
+  height:35px;
+  width:150px;
+  font-family:'Open Sans',sans-serif;
+  font-size:15px;
+  background-color:white;
+  color:black;
+  border:1px solid black !important;
+  border-radius:0px;
+/*   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22),0px 0px 0px 1px white inset;
+ */
+}
+.butt:hover
+{
+  color:white;
+  background-color:black;
+  border-radius:0px;
+}
+</style>
+<style class="cp-pen-styles">body {
+  overflow: hidden;
+}
+
+.mainflex {
+  background: #e2e2e2;
+}
+
+.gradient {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 18.5%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+  margin-bottom: 30px;
+}
+
+svg {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+}
+
+heading {
+  font-family: 'Rochester',cursive;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+#dot {
+  animation: blink 350ms ease-in-out 8 alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.typewriter h3 {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  font-family: 'Lato',sans-serif;
+  letter-spacing: .10em;
+  animation: typing 4.3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+    display: block;
+  }
+  to {
+    width: 100%;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+@media only screen and (max-width: 373px) {
+  h3 {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 290px) {
+  h3 {
+    font-size: 12px;
+  }
+}
+</style></head><body>
+<div class="mainflex">
+  <heading>Instagram</heading>
+  <div class="gradient">
+   <svg>
+     <circle cx="100" cy="100" r="40" fill="none" stroke="white" stroke-width="9" id="bigCircle"/> 
+     <circle cx="147" cy="55" r="7" fill="white" stroke="none" stroke-width="9" id="dot"/> 
+     <rect rx="20" ry="20" x="25" y="25" width="150" height="150" fill="none" stroke="white" stroke-width="9" id="square"/>  
+   </svg> 
+  </div>
+  <div class="content typewriter"><h3>Bringing the world closer together. <a href="/accounts/login/" style="color: blue;text-decoration: none;">Sign in</a></h3>
+    <h3 class="text-center"></h3>
+</div>
+  
+</div>
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script >anime({
+  targets: '#bigCircle',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: [1,-0.39,.3,1],
+  duration:1500,
+  delay: 1200,
+  direction:'forwards',
+});
+anime({
+  targets: '#square',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  duration: 1500,
+  direction: 'forwards',
+  easing: [.65,.03,.3,1]
+});
+//# sourceURL=pen.js
+</script>
+</body></html>

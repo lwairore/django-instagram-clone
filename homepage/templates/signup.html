@@ -1,0 +1,25 @@
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+<body style="background: #e2e2e2;margin-left: 40%;margin-top: 10%; margin-right: 10%">
+  <h4>SIGN UP</h4>
+  <hr>
+  <form method="post" action="{% url 'signup'  %}">
+    {% csrf_token %}
+      {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="display: none">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+      {% endfor %}
+    <button type="submit" class="btn btn-primary">Sign up</button>
+  </form>
+  <h4><a href="/accounts/login/">Login</a> instead? </h>
+{% endblock %}
+</body>
