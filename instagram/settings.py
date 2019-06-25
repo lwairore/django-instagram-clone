@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'homepage',
     'bootstrap3',
     'user_profile',
+    'timeline',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'kwairore@gmail.com'
 EMAIL_HOST_PASSWORD = 'lmzongolo8754'
 EMAIL_PORT = 587
+
+LOGIN_REDIRECT_URL = '/suggestions/'
