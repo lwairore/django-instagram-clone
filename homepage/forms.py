@@ -7,9 +7,9 @@ from django.contrib.auth.models import User
 class NewImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        exclude = ['uploaded_by','comments']
+        exclude = ['uploaded_by','comments', 'likes', 'liked']
         # fields = '__all__'
-
+        
 class SignupForm(UserCreationForm):
     email = forms.EmailField(max_length=200, help_text='Required')
     class Meta:
