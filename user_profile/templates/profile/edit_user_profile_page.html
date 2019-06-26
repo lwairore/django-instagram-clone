@@ -595,7 +595,12 @@ input#searching:focus {
                                   
                              
                                 
-                                
+                                {% empty %}
+                                <div class="row">
+                                   <h2 class="text-center">
+                                      You haven't yet created your profile!
+                                   </h2>
+                                </div>
                                 {% endfor %}
                             
                         </div>

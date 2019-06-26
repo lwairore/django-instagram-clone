@@ -617,7 +617,10 @@ opacity: 1;
                     </div> <!-- end Footer -->
                     
                   </div> <!-- end Insta -->
-            
+            {% empty %}
+            <div class="row">
+                <h3 class="text-center">You have followed anyone yet. Click here to <a href="/suggestions/">add</a></h3>
+            </div>
                 
             {% endfor %}
             {% endfor %}
