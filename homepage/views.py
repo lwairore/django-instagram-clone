@@ -30,7 +30,9 @@ def index(request):
         print('^'* 30)
         print(i.uploaded_by)
     print(images)
-    return render(request, 'suggestions/suggestions.html', {'title':title, 'images':images})
+    all_users = User.objects.all()
+    
+    return render(request, 'suggestions/suggestions.html', {'title':title, 'images':images, 'all_users':all_users, 'current_user_id':request.user.id})
 
 def new_image(request):
     if request.method == 'POST':
@@ -43,6 +45,7 @@ def new_image(request):
             print('-' * 30)
             print(image.uploaded_by)
             image.save_image()
+            return redirect(index)
     else:
         form = NewImageForm()
     return render(request, 'image/new_image.html', {'form':form})
@@ -97,7 +100,6 @@ def follow(request, following_id):
     if request.method == 'POST':
         trial_id = current_user.id
         new_follower = Follow.objects.create(user_id=trial, following_id=following_id)
-    # return redirect(index)
     return redirect(index)
 
 

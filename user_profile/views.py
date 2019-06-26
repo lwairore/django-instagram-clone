@@ -85,18 +85,14 @@ def new_profile(request):
         user_id = current_user.id
         if Profile.objects.filter(user_id=user_id):
             user = Profile.objects.filter(user_id=user_id)
-            user.first_name = first_name
-            user.last_name = last_name
-            user.phone = phone
-            user.email = email
-            user.bio = bio
+           
             form = NewProfileForm(request.POST, request.FILES)
             if form.is_valid():
                 form = form.save()
         
             print('*' * 30)
             # print(user)
-            user.update()
+            user.update(first_name=first_name, last_name=last_name,phone=phone, email=email, bio=bio)
         else: 
             new_profile = Profile.objects.create(user_id=current_user.id, first_name=first_name, last_name=last_name,email=email,phone=phone, bio=bio)
     return redirect(edit_profile_page)

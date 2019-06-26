@@ -770,13 +770,16 @@ input#searching:focus {
         <i class="spinner "></i>
       </form>
       <span class="pull-right">
-        <div class="instaicon disc"></div>
+         <a href="{% url 'homepage' %}">
+            <div class="instaicon disc" title="Explore"></div>
+         </a>
+        
         <a href="{% url 'edit_profile_page' %}">
-          <div class="instaicon like"></div>
+          <div class="instaicon like" title="My Profile"></div>
         </a>
         
-        <a href="{% url 'timeline' %}" class="instaicon pers"></a>
-        &ensp;&ensp;&ensp;<a href="{% url 'new-image' %}"><i class="glyphicon glyphicon-plus" style="font-size: 40px;"></i></a>
+        <a href="{% url 'timeline' %}" class="instaicon pers" title="Timeline"></a>
+        &ensp;&ensp;&ensp;<a href="{% url 'new-image' %}" title="Post an Image"><i class="glyphicon glyphicon-plus" style="font-size: 40px;"></i></a>
       </span>
     </nav>
   </div>
@@ -788,57 +791,54 @@ input#searching:focus {
 <div class="container">
     
     
-        <div class="row">
+      
             <!-- <h3 class="text-center">Suggestions for you</h3> -->
+            <hr>
             <h1 class="title">
                 
                 <small>Suggestions for you</small>
                 <hr>
             </h1>
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-12 col-sm-offset-1">
     
                     
                 {% for image in images %}
+                  
+                {%  if current_user != image.uploaded_by_id %}
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
     
+
                        
              
             <div class="col-md-4 col-sm-6">
-                 <div class="card-container manual-flip">
-                    <div class="card">
-                        <div class="front">
-                            <div class="cover">
-                                <img src="{% static 'images/rotating_card_thumb2.png' %}"/>
-                            </div>
-                            <div class="user">
-                                <img class="img-circle" src="{{image.image.url}}" height="100%">
-                            </div>
-                            <div class="content">
-                                <div class="main">
-                                    <h3 class="name">Andrew Mike</h3>
-
-                                    <p class="profession">Web Developer {{image.uploaded_by.id}}</p>
-                                    <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm in that two seat Lambo"</p>
-                                </div>
-                                <div class="footer">
-                                    <form method="POST" action="{% url 'follow' image.uploaded_by.id %}">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-primary btn-md">Follow</button>
-                                      </form>
-                                    </div>
-                                
-                            </div>
-                        </div> <!-- end front panel -->
-                        
-                    </div> <!-- end card -->
-                </div> <!-- end card-container -->
+                  <div class="card" style="width: 18rem;">
+                        <img src="{{image.image.url}}" class="card-img-top" alt="..." style="width: 100px important; height: 100px !important;">
+                        <div class="card-body">
+                          <p class="card-text">
+                             
+                  
+                              {% for i in all_users %}
+                                 {% if i.id == image.uploaded_by_id %}
+                                    {{i.username}}
+                                 {% endif %}
+                              {% endfor %}
+                        </p>
+                          <p>
+                             <form method="POST" action="{% url 'follow' image.uploaded_by.id %}">
+                           {% csrf_token %}
+                           <button type="submit" class="btn btn-primary btn-md">Follow</button>
+                         </form>
+                        </p>
+                        </div>
+                      </div>
             </div> <!-- end col sm 3 -->
     <!--         <div class="col-sm-1"></div> -->
              <!-- end col-sm-3 -->
              {%  if forloop.counter|divisibleby:3 or forloop.last %}</div>{%  endif %}
+             {%  endif %}
              {% endfor %}
             </div> <!-- end col-sm-10 -->
-        </div> <!-- end row -->
+      
         <div class="space-200"></div>
     </div>
 

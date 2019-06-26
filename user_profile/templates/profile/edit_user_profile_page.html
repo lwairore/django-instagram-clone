@@ -370,33 +370,37 @@ input#searching:focus {
 }
     </style>
 </head>
+<div class="navbar fixed-top">
+   <nav class="container">
+     <span class="navbar-brand mb-0 h1">
+       <a href="/">
+         <div id="brand" class="instaicon logo d-none d-sm-block"></div>
+         <div class="instaicon mainicon d-block d-sm-none"></div>
+
+       </a>
+     </span>
+     <form class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search_results' %}" method="GET">
+       <input name="search" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder=" &#xF002; Search">
+       <i class="spinner "></i>
+     </form>
+     <span class="pull-right">
+        <a href="{% url 'homepage' %}">
+           <div class="instaicon disc" title="Explore"></div>
+        </a>
+       
+       <a href="{% url 'edit_profile_page' %}">
+         <div class="instaicon like" title="My Profile"></div>
+       </a>
+       
+       <a href="{% url 'timeline' %}" class="instaicon pers" title="Timeline"></a>
+       &ensp;&ensp;&ensp;<a href="{% url 'new-image' %}" title="Post an Image"><i class="glyphicon glyphicon-plus" style="font-size: 30px;"></i></a>
+     </span>
+   </nav>
+ </div>
 
 <body>
 
-    <div class="navbar fixed-top">
-        <nav class="container">
-          <span class="navbar-brand mb-0 h1">
-            <a href="/">
-              <div id="brand" class="instaicon logo d-none d-sm-block"></div>
-              <div class="instaicon mainicon d-block d-sm-none"></div>
-     
-            </a>
-          </span>
-          <form class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search_results' %}" method="GET">
-            <input name="search" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder=" &#xF002; Search">
-            <i class="spinner "></i>
-          </form>
-          <span class="pull-right">
-            <div class="instaicon disc"></div>
-            <a href="{% url 'edit_profile_page' %}">
-              <div class="instaicon like"></div>
-            </a>
-            
-            <a href="{% url 'timeline' %}" class="instaicon pers"></a>
-            <a href="/admin" class="admin"><img src="static/img/admin.png" style="background-position-x:-450px; background-position-y: -150px; margin-left: 30px;  margin-bottom: 12px;height: 24px; width:24px;"></a>
-          </span>
-        </nav>
-      </div>
+
 
     <hr>
     <div class="container bootstrap snippet">
@@ -426,10 +430,7 @@ input#searching:focus {
 
                 <ul class="list-group">
                     <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 0
-                    </li>
                     
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 0
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Following</strong></span> {{following}}
@@ -499,7 +500,7 @@ input#searching:focus {
                                         <h4>Bio</h4>
                                     </label>
                                     <input type="text" class="form-control" name="bio" id="mobile"
-                                        placeholder="enter mobile number"  title="enter your mobile number if any.">
+                                        placeholder="enter mobile number"  title="Tell us a little about yourself">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -512,13 +513,7 @@ input#searching:focus {
                                         placeholder="you@email.com" title="enter your email.">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <p></p>
-                                        <h4>Profile Picture</h4>
-                                            {% bootstrap_form form layout='inline'%}
-                                            </div>
-                            </div>
+                            
                             <div class="form-group">
                                     <div class="col-xs-12">
                                         <br>
@@ -549,7 +544,7 @@ input#searching:focus {
                                                 <h4><strong>First name</strong></h4>
                                             </label>
                                             <input type="email" class="form-control" name="email" id="email"
-                                                placeholder="you@email.com" title=" your email." readonly value="{{i.first_name}}">
+                                                placeholder="you@email.com" title="Your first name" readonly value="{{i.first_name}}">
                                         </div>
                                     </div>
 
@@ -560,7 +555,7 @@ input#searching:focus {
                                                     <h4><strong>Last name</strong></h4>
                                                 </label>
                                                 <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="you@email.com"  readonly value="{{i.last_name}}" title="enter your email.">
+                                                    placeholder="you@email.com"  readonly value="{{i.last_name}}" title="Your last name.">
                                             </div>
                                         </div>
 
@@ -572,7 +567,7 @@ input#searching:focus {
                                                         <h4><strong>Bio</strong></h4>
                                                     </label>
                                                     <input type="email" class="form-control" name="email" id="email"
-                                                        placeholder="you@email.com" readonly value="{{i.bio}}" title="enter your email.">
+                                                        placeholder="you@email.com" readonly value="{{i.bio}}" title="Your bio">
                                                 </div>
                                             </div>
 
@@ -583,7 +578,7 @@ input#searching:focus {
                                                             <h4><strong>Email</strong></h4>
                                                         </label>
                                                         <input type="email" class="form-control" name="email" id="email"
-                                                            placeholder="you@email.com" readonly value="{{i.email}}" title="enter your email." value="john@gmail.com" readonly>
+                                                            placeholder="you@email.com" readonly value="{{i.email}}" title="Your email address" value="john@gmail.com" readonly>
                                                     </div>
                                                 </div>
                               
@@ -594,7 +589,7 @@ input#searching:focus {
                                                                 <h4><strong>Phone</strong></h4>
                                                             </label>
                                                             <input type="email" class="form-control" name="email" id="email"
-                                                                placeholder="you@email.com" readonly value="{{i.phone}}" title="enter your email.">
+                                                                placeholder="you@email.com" readonly value="{{i.phone}}" title="Your phone number">
                                                         </div>
                                                     </div>
                                   
