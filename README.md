@@ -1,6 +1,5 @@
-## InstaClone
-InstaClone is a photo sharing networking service. This app allows users to upload to the service. An account's post can be shared publicly or with preapproaved followers. Users can 'like' photos.
-
+## Django Instagram Clone
+Django Instagram Clone is a photo sharing networking service. This app allows users to upload to the service. An account's post can be shared publicly or with preapproaved followers. Users can 'like' photos.
 
 
 ## User stories
